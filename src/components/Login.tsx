@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
-import UserContext from "../context/UserContext";
+import UserContext from "../context/UserContext/UserContext";
+import ThemeContext from "../context/theme-context/ThemeContext";
 function Login() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,7 +15,7 @@ function Login() {
   };
   return (
     <div>
-      <h2>Login</h2>
+      <h2 className="text-background">Login</h2>
       <input
         type="text"
         placeholder="username"
@@ -30,6 +33,7 @@ function Login() {
         }}
       />
       <button onClick={handleSubmit}>Submit</button>
+      <button onClick={toggleTheme}>{theme}</button>
     </div>
   );
 }
