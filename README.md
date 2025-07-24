@@ -24,9 +24,11 @@ This repo consist of topics learned during my work for an intership as software 
 ### Task{2025-7-24}(To use custom hooks and error-boundary to show github users details using Github api)
 
 - Fetched User
+  
 ![UserFetch](./public/demo.png) 
 
 - Error when User Not Found
+  
 ![Error](./public/demo1.png) 
 
 ---
