@@ -1,5 +1,6 @@
 import "./App.css";
-import { FallbackComponent } from "./components/fall-back";
+import { ErrorFallback } from "./components/fall-back";
+import { GitHubUserSearch } from "./components/GithubSearch";
 import Login from "./components/Login.js";
 import Profile from "./components/Profile.js";
 import { ThemeProvider } from "./context/theme-context/ThemeContext.js";
@@ -9,17 +10,15 @@ import UseMemo from "./useMemo/memo";
 import { ErrorBoundary } from "react-error-boundary";
 function App() {
   return (
-    <ErrorBoundary
-      FallbackComponent={FallbackComponent}
-      onReset={() => window.location.reload()}
-    >
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
       <ThemeProvider>
         <UserContextProvider>
           {/* <h1>Context API</h1>
         <Login />
         <Profile /> */}
           {/* <UseMemo /> */}
-          <UseCallback />
+          {/*<UseCallback />*/}
+          <GitHubUserSearch />
         </UserContextProvider>
       </ThemeProvider>
     </ErrorBoundary>

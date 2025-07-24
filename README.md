@@ -18,3 +18,15 @@ This repo consist of topics learned during my work for an intership as software 
 - Returns the same function reference unless dependencies change.
 
 4. Error Boundary:In React, an Error Boundary is a component that catches JavaScript errors in its child component tree, logs those errors, and displays a fallback UI instead of crashing the whole app.
+
+---
+
+### Task{2025-7-24}(To use custom hooks and error-boundary to show github users details using Github api)
+
+- Fetched User
+![UserFetch](./public/demo.png) 
+
+- Error when User Not Found
+![Error](./public/demo1.png) 
+
+---
