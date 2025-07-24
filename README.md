@@ -19,7 +19,7 @@ This repo consist of topics learned during my work for an intership as software 
 
 4. **Error Boundary(2025-7-24):** In React, an Error Boundary is a component that catches JavaScript errors in its child component tree, logs those errors, and displays a fallback UI instead of crashing the whole app.
 
-5. **Custom Hooks(2025-7-24):**In React, a custom hook is a reusable JavaScript function that uses React hooks (like useState, useEffect) to encapsulate and reuse logic across components.
+5. **Custom Hooks(2025-7-24):** In React, a custom hook is a reusable JavaScript function that uses React hooks (like useState, useEffect) to encapsulate and reuse logic across components.
 
 ---
 
