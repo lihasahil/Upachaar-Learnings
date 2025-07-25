@@ -34,6 +34,8 @@ This repo consist of topics learned during my work for an intership as software 
 5. **Zod:**
    Zod is a TypeScript-first schema declaration and validation library that provides a simple, declarative way to define and validate data structures.
 
+   ---
+
 ### Task(2025-7-25) (Create auth forms like login, register and reset-password using react-hook-form and use zod validation)
 
 <div style="display: flex; gap: 10px;">
@@ -41,6 +43,9 @@ This repo consist of topics learned during my work for an intership as software 
   <img src="./public/register.png" alt="Register Form" width="300" />
   <img src="./public/reset.png" alt="Reset Password Form" width="300" />
 </div>
+
+---
+
 ### 2025-7-24(Thursday)
 
 1. **Context-Api(2025-7-23):** The Context API in React allows you to:
