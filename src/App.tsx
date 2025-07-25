@@ -1,27 +1,31 @@
-import "./App.css";
-import { ErrorFallback } from "./components/fall-back";
-import { GitHubUserSearch } from "./components/GithubSearch";
-import Login from "./components/Login.js";
-import Profile from "./components/Profile.js";
-import { ThemeProvider } from "./context/theme-context/ThemeContext.js";
-import UserContextProvider from "./context/UserContext/UserContextProvider.jsx";
-import UseCallback from "./usecallback/callback";
-import UseMemo from "./useMemo/memo";
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "./context/theme-context/ThemeContext";
 import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./components/fall-back";
+import { LoginForm } from "./auth/Login";
+import { RegisterForm } from "./auth/Register";
+import { ResetPasswordForm } from "./auth/ResetPasswordForm";
+import { Layout } from "./components/Layout"; // Optional layout wrapper
+
 function App() {
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <ThemeProvider>
-        <UserContextProvider>
-          {/* <h1>Context API</h1>
-        <Login />
-        <Profile /> */}
-          {/* <UseMemo /> */}
-          {/*<UseCallback />*/}
-          <GitHubUserSearch />
-        </UserContextProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <ThemeProvider>
+      <Routes>
+        {/* Optional layout wrapper for consistent styling */}
+        <Route path="/" element={<Layout />}>
+          {/* Public routes */}
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/reset-password" element={<ResetPasswordForm />} />
+
+          {/* Protected routes would go here */}
+          {/* <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
+        </Route>
+
+        {/* 404 catch-all route */}
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
