@@ -1,13 +1,16 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema } from "../schemas/zodSchemas";
+import { LoginFormData, loginSchema } from "../schemas/zodSchemas";
 import { z } from "zod";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useLoginUser } from "../hooks/auth-hooks/use-login";
 
 type LoginFormInputs = z.infer<typeof loginSchema>;
 
 export const LoginForm: React.FC = () => {
+  const navigate = useNavigate();
+  const { mutate, isPending, isError, error } = useLoginUser();
   const {
     register,
     handleSubmit,
@@ -16,8 +19,18 @@ export const LoginForm: React.FC = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = (data: LoginFormInputs) => {
-    console.log("Login data:", data);
+  const onSubmit = (data: LoginFormData) => {
+    mutate(data, {
+      onSuccess: ({ token, user }) => {
+        localStorage.setItem("token", token);
+
+        if (user.role === "admin") {
+          void navigate("/admin/dashboard");
+        } else {
+          void navigate("/");
+        }
+      },
+    });
   };
 
   return (
@@ -38,7 +51,7 @@ export const LoginForm: React.FC = () => {
       {errors.password && (
         <p className="text-red-500">{errors.password.message}</p>
       )}
-      <Link to="/reset-password" className="text-xs">Reset Password</Link>
+      {/* <Link to="/reset-password" className="text-xs">Reset Password</Link> */}
       <button
         type="submit"
         className="flex justify-center bg-green-600 rounded-2xl w-xs p-2 align-center"

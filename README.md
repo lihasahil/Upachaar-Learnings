@@ -4,6 +4,31 @@ This repo consist of topics learned during my work for an intership as software 
 
 ## Topics learned:
 
+### 2025-7-27(Sunday)
+
+1. **Axios:** Axios is a promise-based HTTP client for the browser and Node.js. It simplifies the process of making HTTP requests to REST APIs.Features:
+
+   - Supports GET, POST, PUT, DELETE, etc.
+   - Automatic JSON parsing
+   - Interceptors for request/response
+   - Built-in error handling
+   - Works with async/await
+   - Can be configured globally (base URL, headers, etc.)
+
+2. **Tanstack Query:**TanStack Query is a data-fetching and caching library for React and other frameworks. It focuses on managing server state — data fetched from an external source like an API.Why use it?
+
+   - Caching (reduces unnecessary requests)
+   - Built-in loading, error, and success states
+   - Background refetching
+   - Pagination and infinite scrolling
+   - Works well with Axios, Fetch, or GraphQL
+   - Automatically keeps data fresh
+
+### Task(2025-7-25)(Frontend-backend integration for authentication and user management using Axios and React Query)
+
+- Fetched User using get method(Axios)
+  ![UserFetch](./public/user-detail.png)
+
 ### 2025-7-25(Friday)
 
 1. **Code Splitting:**

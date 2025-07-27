@@ -1,22 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema } from "../schemas/zodSchemas";
+import { RegisterFormData, registerSchema } from "../schemas/zodSchemas";
 import { z } from "zod";
-
-type RegisterFormInputs = z.infer<typeof registerSchema>;
+import { useRegisterUser } from "../hooks/auth-hooks/use-register";
 
 export const RegisterForm: React.FC = () => {
+  const { mutate } = useRegisterUser();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterFormInputs>({
+  } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
   });
 
-  const onSubmit = (data: RegisterFormInputs) => {
-    console.log("Registration data:", data);
+  const onSubmit = (data: RegisterFormData) => {
+    mutate(data);
+    console.log("Submitting login form:", data);
   };
 
   return (
@@ -44,7 +45,14 @@ export const RegisterForm: React.FC = () => {
       {errors.password && (
         <p className="text-red-500">{errors.password.message}</p>
       )}
-
+      <input
+        {...register("role")}
+        type="role"
+        placeholder="role"
+        className="input focus border-2 border-gray-600 rounded-md p-2 w-sm"
+      />
+      {errors.role && <p className="text-red-500">{errors.role.message}</p>}
+      {/* 
       <input
         {...register("confirmPassword")}
         type="password"
@@ -53,7 +61,7 @@ export const RegisterForm: React.FC = () => {
       />
       {errors.confirmPassword && (
         <p className="text-red-500">{errors.confirmPassword.message}</p>
-      )}
+      )} */}
 
       <button
         type="submit"
