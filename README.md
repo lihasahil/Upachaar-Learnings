@@ -15,7 +15,7 @@ This repo consist of topics learned during my work for an intership as software 
    - Works with async/await
    - Can be configured globally (base URL, headers, etc.)
 
-2. **Tanstack Query:**TanStack Query is a data-fetching and caching library for React and other frameworks. It focuses on managing server state — data fetched from an external source like an API.Why use it?
+2. **Tanstack Query:** TanStack Query is a data-fetching and caching library for React and other frameworks. It focuses on managing server state — data fetched from an external source like an API.Why use it?
 
    - Caching (reduces unnecessary requests)
    - Built-in loading, error, and success states
@@ -28,6 +28,8 @@ This repo consist of topics learned during my work for an intership as software 
 
 - Fetched User using get method(Axios)
   ![UserFetch](./public/user-detail.png)
+
+  ---
 
 ### 2025-7-25(Friday)
 
