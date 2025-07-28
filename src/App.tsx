@@ -7,17 +7,21 @@ import { RegisterForm } from "./auth/Register";
 // import { ResetPasswordForm } from "./auth/ResetPasswordForm";
 import { Layout } from "./components/Layout"; // Optional layout wrapper
 import AdminDashboard from "./components/admin-dashboard";
+import { Counter } from "./components/counter";
+import UserForm from "./components/userForm";
 
 function App() {
   return (
     <ThemeProvider>
-      
+      {/* <Counter /> */}
+
       <Routes>
         {/* Optional layout wrapper for consistent styling */}
         <Route path="/" element={<Layout />}>
           {/* Public routes */}
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
+          <Route path="/userForm" element={<UserForm />} />
           {/* <Route path="/reset-password" element={<ResetPasswordForm />} /> */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           {/* Protected routes would go here */}

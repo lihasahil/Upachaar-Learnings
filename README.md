@@ -4,6 +4,26 @@ This repo consist of topics learned during my work for an intership as software 
 
 ## Topics learned:
 
+### 2025-7-28(Monday)
+
+1. **Redux and Redux-Toolkit:**
+   Redux is a predictable state container for JavaScript apps, mainly used with React. It helps manage and centralize application state.
+   Redux Toolkit is the official, recommended way to write Redux logic. It abstracts a lot of boilerplate and adds powerful features.
+   Why Redux Toolkit?
+
+   - Simplifies reducers, actions, and store setup
+   - Built-in immer for mutable-style reducers
+   - Includes powerful APIs like createSlice, createAsyncThunk
+   - Follows best practices by default
+
+### Task(2025-7-28)(Create form that stores some details in state and display it below using redux toolkit)
+
+- User Form
+
+  ![UserFetch](./public/redux.png)
+
+---
+
 ### 2025-7-27(Sunday)
 
 1. **Axios:** Axios is a promise-based HTTP client for the browser and Node.js. It simplifies the process of making HTTP requests to REST APIs.Features:
@@ -24,12 +44,12 @@ This repo consist of topics learned during my work for an intership as software 
    - Works well with Axios, Fetch, or GraphQL
    - Automatically keeps data fresh
 
-### Task(2025-7-25)(Frontend-backend integration for authentication and user management using Axios and React Query)
+### Task(2025-7-27)(Frontend-backend integration for authentication and user management using Axios and React Query)
 
 - Fetched User using get method(Axios)
   ![UserFetch](./public/user-detail.png)
 
-  ---
+  ***
 
 ### 2025-7-25(Friday)
 
@@ -61,7 +81,7 @@ This repo consist of topics learned during my work for an intership as software 
 5. **Zod:**
    Zod is a TypeScript-first schema declaration and validation library that provides a simple, declarative way to define and validate data structures.
 
-   ---
+   ***
 
 ### Task(2025-7-25) (Create auth forms like login, register and reset-password using react-hook-form and use zod validation)
 

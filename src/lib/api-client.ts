@@ -20,7 +20,7 @@ type Interceptors = {
 
 interface CreateApiInstanceParams {
   baseUrl: string;
-  apiKey: string;
+  // apiKey: string;
   interceptors?: Interceptors;
 }
 
@@ -32,7 +32,7 @@ interface CreateApiInstanceParams {
  * @returns {AxiosInstance} - The configured Axios instance.
  */
 const createApiInstance = ({
-  apiKey,
+  // apiKey,
   baseUrl,
   interceptors,
 }: CreateApiInstanceParams): AxiosInstance => {
@@ -64,7 +64,7 @@ const createApiInstance = ({
         if (token) config.headers.set("Authorization", `Bearer ${token}`);
 
         // Add API key to headers
-        if (apiKey) config.headers.set("x-api-key", apiKey);
+        // if (apiKey) config.headers.set("x-api-key", apiKey);
 
         return config;
       }),
@@ -107,5 +107,5 @@ const createApiInstance = ({
 // Create Axios instances for each API
 export const apiClient = createApiInstance({
   baseUrl: import.meta.env.VITE_BASE_URL,
-  apiKey: import.meta.env.APIS.API_KEY,
+  // apiKey: import.meta.env.VITE.API_KEY,
 });
